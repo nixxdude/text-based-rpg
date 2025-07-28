@@ -1,36 +1,35 @@
-class Weapon:
-    def __init__(self, name, attacks):
-        self.name = name
-        self.attacks = {}
+import sys, os, time, pickle
 
 class Player:
-    def __init__(self, name, hp, strength, speed, mana, equipped_weapon, player_class, inventory, coins):
+    def __init__(self, name, max_hp, current_hp, equipped_weapon, strength, coins):
         self.name = name
-        self.hp = hp
+        self.max_hp = max_hp
+        self.current_hp = current_hp
+        self.equipped_weapon = equipped_weapon
         self.damage = equipped_weapon.damage
         self.strength = strength
-        self.speed = speed
-        self.mana = mana
-        self.equipped_weapon = equipped_weapon
-        self.player_class = player_class
-        self.inventory = inventory
+        self.inventory = {}
         self.coins = coins
 
-player = Player("placeholder", 30, 1, 1, 30,)
-
-class PlayerClass:
-    def __init__(self, name, hp_buff, strength_buff, speed_buff, mana_buff, disabled_weapons):
+class Weapon:
+    def __init__(self, name, desc, damage, shop_cost):
         self.name = name
-        self.hp_buff = hp_buff
-        self.strength_buff = strength_buff
-        self.speed_buff = speed_buff
-        self.mana_buff = mana_buff
-        self.disabled_weapons = disabled_weapons
-    
-    def add_bonuses(PlayerClass):
-        Player.health = Player.health + PlayerClass.hp_buff
-        Player.strength = Player.strength + PlayerClass.strength_buff
-        Player.speed = Player.speed + PlayerClass.speed_buff
-        Player.mana = Player.mana + PlayerClass.mana_buff
+        self.desc = desc
+        self.damage = damage
+        self.shop_cost = shop_cost
+
+# wooden_baton = Weapon('Wooden Baton', '')
 
 
+# def start():
+#     print('Hello, user.')
+#     check_save_path = os.path.exists('saves')
+#     if check_save_path == False:
+#         os.mkdir('saves')
+#     else:
+#         pass
+#     check_save = os.path.exists('saves/savefile.dat')
+#     if check_save == True:
+#         pickle.load
+
+# start()
